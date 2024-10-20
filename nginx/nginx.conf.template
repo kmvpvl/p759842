@@ -53,7 +53,7 @@ http {
     # Продукт excursion Дарина Петухова
     server {
         server_name excursion.${MISISSPACE_DOMAIN};
-        include misisspace_ssl.conf;
+        include excursion.misisspace_ssl.conf;
 
         location / {
             proxy_set_header Host $host;
