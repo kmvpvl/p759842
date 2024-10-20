@@ -1,0 +1,47 @@
+include:
+  - path: ../misis-excursion/docker-compose.yml
+  #- path: ../s-ho.me-web/docker-compose.yml
+services:
+  misis-nginx:
+    env_file:
+      - path: ./nginx/.env
+        required: true
+    build: ./nginx
+    container_name: misis-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    #depends_on:
+    #  - misisspace.landing
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - misis-nginx-logs:/var/log/nginx/services/:rw
+  misis-certbot:
+    image: certbot/certbot:latest
+    container_name: misis-certbot
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+#  backuper:
+#    image: lscr.io/linuxserver/syncthing:latest
+#    container_name: backuper
+#    hostname: backuper #optional
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - TZ=Etc/UTC
+#    volumes:
+#      - ./backuper/conf:/config
+#      - backup-volume:/bckp/:rw
+#    restart: unless-stopped
+volumes:
+  misis-backup-volume:
+    name: misis-backup-volume
+  misis-nginx-logs:
+    name: misis-nginx-logs
+
+networks:
+  default:
+    name: misis-network

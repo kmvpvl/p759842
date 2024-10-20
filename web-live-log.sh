@@ -1,0 +1,1 @@
+docker compose exec web tail -f /var/log/nginx/services/access.log -n 50
