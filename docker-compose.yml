@@ -1,5 +1,6 @@
 include:
   - path: ../misis-excursion/docker-compose.yml
+  - path: ../misis-FriendsM/docker-compose.yml
   #- path: ../s-ho.me-web/docker-compose.yml
 services:
   misis-nginx:
