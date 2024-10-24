@@ -6,6 +6,7 @@ events {
 
 }
 http {
+    include /etc/nginx/mime.types;
     js_path "/etc/nginx/njs/";
     js_import health from health.js;
     log_format compression '[$time_local] $host - $remote_addr "$request" $status "$http_user_agent"';
