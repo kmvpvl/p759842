@@ -3,6 +3,7 @@ include:
   - path: ../misis-FriendsM/docker-compose.yml
   - path: ../misis-psy/docker-compose.yml
   - path: ../misis-sigma/docker-compose.yml
+  - path: ../misis-unimates/docker-compose.yml
 services:
   misis-nginx:
     env_file:
