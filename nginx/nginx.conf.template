@@ -12,8 +12,9 @@ http {
     log_format compression '[$time_local] $host - $remote_addr "$request" $status "$http_user_agent"';
 
     access_log /var/log/nginx/services/access.log compression;
+    access_log /dev/stdout compression;
     error_log /var/log/nginx/services/error.log warn;    
-
+    error_log /dev/stderr warn;
     # https redirection
     server {
         listen 80;
