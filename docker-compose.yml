@@ -5,6 +5,7 @@ include:
   - path: ../misis-sigma/docker-compose.yml
 #  - path: ../misis-unimates/docker-compose.yml
   - path: ../misis-stuff/docker-compose.yml
+  - path: ../misis-dest/docker-compose.yml
 services:
   misis-nginx:
     env_file:
