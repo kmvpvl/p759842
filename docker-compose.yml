@@ -8,6 +8,7 @@ include:
   - path: ../misis-dest/docker-compose.yml
   - path: ../misis-cho/docker-compose.yml
   - path: ../misis-sport/docker-compose.yml
+  - path: ../misis-nosh/docker-compose.yml
 services:
   misis-nginx:
     env_file:
