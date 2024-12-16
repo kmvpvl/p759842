@@ -26,6 +26,7 @@ services:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
       - misis-nginx-logs:/var/log/nginx/services/:rw
+      - /home/pavel/misis-map/:/usr/share/nginx/map/:ro
   misis-certbot:
     image: certbot/certbot:latest
     container_name: misis-certbot

@@ -73,7 +73,7 @@ http {
         include map.misisspace_ssl.conf;
 
         location / {
-            root /home/pavel/misis-map/;
+            root /usr/share/nginx/map;
             index index.html;
         }
     }
