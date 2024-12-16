@@ -20,6 +20,7 @@ http {
         listen 80;
         server_name 
                     excursion.${MISISSPACE_DOMAIN} 
+                    map.${MISISSPACE_DOMAIN} 
                     www.${MISISSPACE_DOMAIN} 
                     ${MISISSPACE_DOMAIN} 
                     # wiki.${MISISSPACE_DOMAIN} 
@@ -66,6 +67,16 @@ http {
         }
     }
 
+    # Продукт map Арина Ибрагимова
+    server {
+        server_name map.${MISISSPACE_DOMAIN};
+        include map.misisspace_ssl.conf;
+
+        location / {
+            root /home/pavel/misis-map/;
+            index index.html;
+        }
+    }
 
 
     #server {
