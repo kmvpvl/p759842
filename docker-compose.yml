@@ -12,6 +12,7 @@ include:
   - path: ../misis-extracts/docker-compose.yml
   - path: ../misis-obsch/docker-compose.yml
   - path: ../misis-inquiry/docker-compose.yml
+  - path: ../misis-gravity/docker-compose.yml
 services:
   misis-nginx:
     env_file:
