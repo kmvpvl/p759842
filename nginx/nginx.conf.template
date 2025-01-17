@@ -40,7 +40,7 @@ http {
 
     # MISIS.SPACE landing
     server {
-        server_name www.${MISISSPACE_DOMAIN} ${MISISSPACE_DOMAIN};
+        server_name www.${MISISSPACE_DOMAIN} ${MISISSPACE_DOMAIN} api.${MISISSPACE_DOMAIN} backup.${MISISSPACE_DOMAIN} wiki.${MISISSPACE_DOMAIN};
         include misisspace_ssl.conf;
 
         location = /health {

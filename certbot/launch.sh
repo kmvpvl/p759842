@@ -4,6 +4,7 @@ docker compose run --rm misis-certbot renew --cert-name misis.space --webroot-pa
 
 #excursion
 docker compose run --rm misis-certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d "excursion.misis.space"
+docker compose run --rm misis-certbot renew --cert-name excursion.misis.space --webroot-path /var/www/certbot/ --dry-run
 
 #map
 docker compose run --rm misis-certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d "map.misis.space"
