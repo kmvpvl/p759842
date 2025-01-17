@@ -23,8 +23,9 @@ http {
                     map.${MISISSPACE_DOMAIN} 
                     www.${MISISSPACE_DOMAIN} 
                     ${MISISSPACE_DOMAIN} 
-                    # wiki.${MISISSPACE_DOMAIN} 
-                    # bckp.${MISISSPACE_DOMAIN}
+                    wiki.${MISISSPACE_DOMAIN} 
+                    backup.${MISISSPACE_DOMAIN}
+                    api.${MISISSPACE_DOMAIN}
                     ;
         server_tokens off;
 
