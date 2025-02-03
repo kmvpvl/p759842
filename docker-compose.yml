@@ -39,6 +39,18 @@ services:
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
+  mysql-db:
+    image: mysql:latest
+    restart: always
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
+      MYSQL_USER: 
+      MYSQL_PASSWORD: 
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - mysqldata:/var/lib/mysql
 #  backuper:
 #    image: lscr.io/linuxserver/syncthing:latest
 #    container_name: backuper
@@ -51,12 +63,15 @@ services:
 #      - ./backuper/conf:/config
 #      - backup-volume:/bckp/:rw
 #    restart: unless-stopped
+
 volumes:
   misis-backup-volume:
     name: misis-backup-volume
   misis-nginx-logs:
     name: misis-nginx-logs
-
+  mysqldata:
+    name: mysqldata
+    
 networks:
   default:
     name: misis-network
