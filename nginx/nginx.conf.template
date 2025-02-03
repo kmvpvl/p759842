@@ -21,6 +21,8 @@ http {
         server_name 
                     excursion.${MISISSPACE_DOMAIN} 
                     map.${MISISSPACE_DOMAIN} 
+                    cf.${MISISSPACE_DOMAIN} 
+                    cf-api.${MISISSPACE_DOMAIN} 
                     www.${MISISSPACE_DOMAIN} 
                     ${MISISSPACE_DOMAIN} 
                     wiki.${MISISSPACE_DOMAIN} 
@@ -51,6 +53,33 @@ http {
         location / {
             root /usr/share/nginx/html;
             index index.html;
+        }
+    }
+
+    # 
+    server {
+        server_name cf.${MISISSPACE_DOMAIN};
+        include cf.misisspace_ssl.conf;
+
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_pass http://cf-tool:4173;
+        }
+    }
+
+    server {
+        server_name cf-api.${MISISSPACE_DOMAIN};
+        include cf-api.misisspace_ssl.conf;
+
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_pass http://cf-api:8000;
         }
     }
 
