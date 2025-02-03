@@ -72,7 +72,7 @@ http {
 
     server {
         server_name cf-api.${MISISSPACE_DOMAIN};
-        include cf-api.misisspace_ssl.conf;
+        include cf.misisspace_ssl.conf;
 
         location / {
             proxy_set_header Host $host;
