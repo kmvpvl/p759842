@@ -3,7 +3,6 @@ include:
   - path: ../misis-FriendsM/docker-compose.yml
   - path: ../misis-psy/docker-compose.yml
   - path: ../misis-sigma/docker-compose.yml
-#  - path: ../misis-unimates/docker-compose.yml
   - path: ../misis-stuff/docker-compose.yml
   - path: ../misis-dest/docker-compose.yml
   - path: ../misis-cho/docker-compose.yml
@@ -12,10 +11,10 @@ include:
   - path: ../misis-extracts/docker-compose.yml
   - path: ../misis-obsch/docker-compose.yml
   - path: ../misis-inquiry/docker-compose.yml
-  - path: ../misis-gravity/docker-compose.yml
   - path: ../misis-tp/docker-compose.yml
   - path: ../misis-tasty/docker-compose.yml
   - path: ../coodfort/docker-compose.yml
+  - path: ../misis-foreigner-assistant/docker-compose.yml
 services:
   misis-nginx:
     env_file:
