@@ -19,8 +19,6 @@ http {
     server {
         listen 80;
         server_name 
-                    excursion.${MISISSPACE_DOMAIN} 
-                    map.${MISISSPACE_DOMAIN} 
                     cf.${MISISSPACE_DOMAIN} 
                     cf-api.${MISISSPACE_DOMAIN} 
                     www.${MISISSPACE_DOMAIN} 
@@ -28,6 +26,9 @@ http {
                     wiki.${MISISSPACE_DOMAIN} 
                     backup.${MISISSPACE_DOMAIN}
                     api.${MISISSPACE_DOMAIN}
+                    ${DOLCEFORTE_DOMAIN}
+                    www.${DOLCEFORTE_DOMAIN}
+                    api.${DOLCEFORTE_DOMAIN}
                     ;
         server_tokens off;
 
@@ -83,28 +84,29 @@ http {
         }
     }
 
-    # Продукт excursion Дарина Петухова
     server {
-        server_name excursion.${MISISSPACE_DOMAIN};
-        include excursion.misisspace_ssl.conf;
+        server_name www.${DOLCEFORTE_DOMAIN} ${DOLCEFORTE_DOMAIN};
+        include dolceforte_ssl.conf;
 
         location / {
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_pass http://misis-excursion:8000;
+            proxy_pass http://df-tool:4173;
         }
     }
 
-    # Продукт map Арина Ибрагимова
     server {
-        server_name map.${MISISSPACE_DOMAIN};
-        include map.misisspace_ssl.conf;
+        server_name api.${DOLCEFORTE_DOMAIN};
+        include dolceforte_ssl.conf;
 
         location / {
-            root /usr/share/nginx/map;
-            index index.html;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_pass http://df-api:4000;
         }
     }
 

@@ -1,7 +1,6 @@
 include:
-  - path: ../misis-excursion/docker-compose.yml
   - path: ../coodfort/docker-compose.yml
-  - path: ../misis-foreigner-assistant/docker-compose.yml
+  - path: ../dolceforte/docker-compose.yml
 services:
   misis-nginx:
     env_file:
@@ -14,14 +13,14 @@ services:
       - "443:443"
     restart: always
     depends_on:
-    #  - misisspace.landing
       - tool
       - api
+      - cf-tool
+      - cf-api
     volumes:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
       - misis-nginx-logs:/var/log/nginx/services/:rw
-      - /home/pavel/misis-map/:/usr/share/nginx/map/:ro
   misis-certbot:
     image: certbot/certbot:latest
     container_name: misis-certbot
