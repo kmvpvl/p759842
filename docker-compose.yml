@@ -1,5 +1,4 @@
 include:
-  - path: ../coodfort/docker-compose.yml
   - path: ../dolceforte/docker-compose.yml
 services:
   misis-nginx:
@@ -13,10 +12,8 @@ services:
       - "443:443"
     restart: always
     depends_on:
-      - tool
-      - api
-      - cf-tool
-      - cf-api
+      - df-tool
+      - df-api
     volumes:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
