@@ -58,6 +58,7 @@ services:
       - "25:25"    # SMTP
       - "587:587"  # Submission
       - "993:993"  # IMAP
+      - "80:80"    # HTTP (для Let's Encrypt)
     volumes:
       - ./df-mailserver/docker-data/dms/mail-data/:/var/mail/
       - ./df-mailserver/docker-data/dms/mail-state/:/var/mail-state/
