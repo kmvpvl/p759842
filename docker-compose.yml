@@ -52,7 +52,8 @@ services:
   df-mailserver:
     image: ghcr.io/docker-mailserver/docker-mailserver:latest
     container_name: df-mailserver
-    hostname: mail.dolceforte.rs
+    hostname: mail
+    domainname: dolceforte.rs
     ports:
       - "25:25"    # SMTP
       - "587:587"  # Submission
