@@ -49,6 +49,29 @@ services:
 #      - ./backuper/conf:/config
 #      - backup-volume:/bckp/:rw
 #    restart: unless-stopped
+  df-mailserver:
+    image: ghcr.io/docker-mailserver/docker-mailserver:latest
+    container_name: df-mailserver
+    hostname: mail.dolceforte.rs
+    ports:
+      - "25:25"    # SMTP
+      - "587:587"  # Submission
+      - "993:993"  # IMAP
+    volumes:
+      - ./df-mailserver/docker-data/dms/mail-data/:/var/mail/
+      - ./df-mailserver/docker-data/dms/mail-state/:/var/mail-state/
+      - ./df-mailserver/docker-data/dms/mail-logs/:/var/log/mail/
+      - ./df-mailserver/docker-data/dms/config/:/tmp/docker-mailserver/
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - ENABLE_SPAMASSASSIN=0  # Отключить SpamAssassin
+      - ENABLE_CLAMAV=0        # Отключить ClamAV
+      - ENABLE_FAIL2BAN=1      # Защита от brute-force
+      - SSL_TYPE=letsencrypt   # Авто-TLS через Let's Encrypt
+      - PERMIT_DOCKER=host     # Доступ для Docker-сети
+    cap_add:
+      - NET_ADMIN
+    restart: always
 
 volumes:
   misis-backup-volume:
