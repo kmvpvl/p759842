@@ -68,6 +68,7 @@ services:
       - ENABLE_CLAMAV=0        # Отключить ClamAV
       - ENABLE_FAIL2BAN=1      # Защита от brute-force
       - SSL_TYPE=letsencrypt   # Авто-TLS через Let's Encrypt
+      - SSL_DOMAIN=mail.dolceforte.rs
       - PERMIT_DOCKER=host     # Доступ для Docker-сети
     cap_add:
       - NET_ADMIN
