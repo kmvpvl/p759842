@@ -1,3 +1,5 @@
 certbot/*/
 .env
 backuper/conf
+df-mailserver/dms/mail-*
+df-mailserver/docker-data
