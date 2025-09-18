@@ -58,12 +58,13 @@ services:
       - "25:25"    # SMTP
       - "587:587"  # Submission
       - "993:993"  # IMAP
-      - "80:80"    # HTTP (для Let's Encrypt)
+#      - "8080:80"    # HTTP (для Let's Encrypt)
     volumes:
       - ./df-mailserver/docker-data/dms/mail-data/:/var/mail/
       - ./df-mailserver/docker-data/dms/mail-state/:/var/mail-state/
       - ./df-mailserver/docker-data/dms/mail-logs/:/var/log/mail/
       - ./df-mailserver/docker-data/dms/config/:/tmp/docker-mailserver/
+      - ./certbot/conf:/etc/letsencrypt:ro
       - /etc/localtime:/etc/localtime:ro
     environment:
       - ENABLE_SPAMASSASSIN=0  # Отключить SpamAssassin

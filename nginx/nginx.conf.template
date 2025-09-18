@@ -29,6 +29,7 @@ http {
                     ${DOLCEFORTE_DOMAIN}
                     www.${DOLCEFORTE_DOMAIN}
                     api.${DOLCEFORTE_DOMAIN}
+                    mail.${DOLCEFORTE_DOMAIN}
                     ;
         server_tokens off;
 
