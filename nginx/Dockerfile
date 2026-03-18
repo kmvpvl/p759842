@@ -4,9 +4,10 @@ FROM nginx:latest
 RUN mkdir -p /var/log/nginx/services
 
 #conf
-COPY *.conf.template /etc/nginx/
-COPY *.sh /etc/nginx/
-RUN chmod +x /etc/nginx/*.sh
+#COPY *.conf.template /etc/nginx/
+#COPY *.sh /etc/nginx/
+COPY . /etc/nginx/
+RUN sed -i 's/\r$//' /etc/nginx/*.sh && chmod +x /etc/nginx/*.sh
 
 #static landing
 COPY html /usr/share/nginx/html/

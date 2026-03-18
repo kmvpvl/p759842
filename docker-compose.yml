@@ -12,8 +12,8 @@ services:
       - "443:443"
     restart: always
     depends_on:
-      - cf-tool
-      - cf-api
+      - df-client
+      - df-server
     volumes:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
@@ -25,15 +25,15 @@ services:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
   mysql-db:
-    image: mysql:latest
+    image: mysql:9.6.0
     restart: always
     container_name: mysql-db
+    env_file:
+      - .env
     environment:
-      MYSQL_ROOT_PASSWORD: 
-      MYSQL_DATABASE: 
-      MYSQL_USER: 
-      MYSQL_PASSWORD: 
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_DATABASE: df
+      MYSQL_USER: user
+
     command: ['mysqld', '--performance-schema=OFF']
     volumes:
       - mysqldata:/var/lib/mysql

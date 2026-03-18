@@ -19,8 +19,6 @@ http {
     server {
         listen 80;
         server_name 
-                    # cf.${MISISSPACE_DOMAIN} 
-                    # cf-api.${MISISSPACE_DOMAIN} 
                     www.${MISISSPACE_DOMAIN} 
                     ${MISISSPACE_DOMAIN} 
                     wiki.${MISISSPACE_DOMAIN} 
@@ -93,7 +91,7 @@ http {
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_pass http://cf-tool:4173;
+            proxy_pass http://df-client:3000;
         }
     }
 
@@ -106,7 +104,7 @@ http {
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_pass http://cf-api:4000;
+            proxy_pass http://df-server:5000;
         }
     }
 
