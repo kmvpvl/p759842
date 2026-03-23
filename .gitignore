@@ -3,3 +3,4 @@ certbot/*/
 backuper/conf
 df-mailserver/dms/mail-*
 df-mailserver/docker-data
+mysqlbckp

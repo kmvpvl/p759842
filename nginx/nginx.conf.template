@@ -19,15 +19,12 @@ http {
     server {
         listen 80;
         server_name 
-                    www.${MISISSPACE_DOMAIN} 
-                    ${MISISSPACE_DOMAIN} 
-                    wiki.${MISISSPACE_DOMAIN} 
-                    backup.${MISISSPACE_DOMAIN}
-                    api.${MISISSPACE_DOMAIN}
                     ${DOLCEFORTE_DOMAIN}
                     www.${DOLCEFORTE_DOMAIN}
                     api.${DOLCEFORTE_DOMAIN}
                     mail.${DOLCEFORTE_DOMAIN}
+                    bckp.${DOLCEFORTE_DOMAIN}
+                    sh.${PLUTCHART_DOMAIN}
                     ;
         server_tokens off;
 
@@ -40,47 +37,6 @@ http {
             return 301 https://$host$request_uri;
         }
     }    
-
-    # MISIS.SPACE landing
-    server {
-        server_name www.${MISISSPACE_DOMAIN} ${MISISSPACE_DOMAIN} api.${MISISSPACE_DOMAIN} backup.${MISISSPACE_DOMAIN} wiki.${MISISSPACE_DOMAIN};
-        include misisspace_ssl.conf;
-
-        location = /health {
-            default_type application/json;
-            js_content health.health;
-        }
-        location / {
-            root /usr/share/nginx/html;
-            index index.html;
-        }
-    }
-
-    # 
-#    server {
-#        server_name cf.${MISISSPACE_DOMAIN};
-#        include cf.misisspace_ssl.conf;
-
-#        location / {
-#            proxy_set_header Host $host;
-#            proxy_set_header X-Real-IP $remote_addr;
-#            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-#            proxy_set_header X-Forwarded-Proto $scheme;
-#            proxy_pass http://cf-tool:4173;
-#        }
-#    }
-
-#    server {
-#        server_name cf-api.${MISISSPACE_DOMAIN};
-#        include cf.misisspace_ssl.conf;
-#        location / {
-#            proxy_set_header Host $host;
-#            proxy_set_header X-Real-IP $remote_addr;
-#            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-#            proxy_set_header X-Forwarded-Proto $scheme;
-#            proxy_pass http://cf-api:4000;
-#        }
-#    }
 
     server {
         server_name www.${DOLCEFORTE_DOMAIN} ${DOLCEFORTE_DOMAIN};
@@ -108,26 +64,40 @@ http {
         }
     }
 
+    server {
+        server_name sh.${PLUTCHART_DOMAIN};
+        include plutchart_ssl.conf;
 
-    #server {
-    #    server_name bckp.${MISISSPACE_DOMAIN};
-    #    include misisspace_ssl.conf;
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_pass http://shome-api:8000;
+        }
+    }
 
-    #    location / {
-    #        proxy_set_header Host $host;
-    #        proxy_set_header X-Real-IP $remote_addr;
-    #        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    #        proxy_set_header X-Forwarded-Proto $scheme;
-    #        proxy_pass http://backuper:8384;
-    #    }
-    #}
+#    server {
+#        server_name bckp.${DOLCEFORTE_DOMAIN};
+#        include dolceforte_ssl.conf;
+
+#        location / {
+#            proxy_set_header Host $host;
+#            proxy_set_header X-Real-IP $remote_addr;
+#            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#            proxy_set_header X-Forwarded-Proto $scheme;
+#            proxy_pass http://backuper:8384;
+#        }
+#    }
 
     server {
         listen 80 default_server;
         listen 443 default_server ssl;
         http2 on;
-        ssl_certificate /etc/nginx/ssl/live/misis.space/fullchain.pem;
-        ssl_certificate_key /etc/nginx/ssl/live/misis.space/privkey.pem;
+        ssl_certificate /etc/nginx/ssl/live/dolceforte.rs/fullchain.pem;
+        ssl_certificate_key /etc/nginx/ssl/live/dolceforte.rs/privkey.pem;
+        ssl_certificate /etc/nginx/ssl/live/plutchart.com/fullchain.pem;
+        ssl_certificate_key /etc/nginx/ssl/live/plutchart.com/privkey.pem;
         server_name _;
         return 444;
     }

@@ -1,5 +1,6 @@
 include:
   - path: ../dolceforte/docker-compose.yml
+  - path: ../s-ho.me-web/docker-compose.yml
 services:
   misis-nginx:
     env_file:
@@ -14,6 +15,7 @@ services:
     depends_on:
       - df-client
       - df-server
+      - shome-api
     volumes:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
@@ -37,6 +39,7 @@ services:
     command: ['mysqld', '--performance-schema=OFF']
     volumes:
       - mysqldata:/var/lib/mysql
+      - ./mysqlbckp:/backup
 #  backuper:
 #    image: lscr.io/linuxserver/syncthing:latest
 #    container_name: backuper
@@ -84,6 +87,8 @@ volumes:
     name: misis-nginx-logs
   mysqldata:
     name: mysqldata
+  backup-volume:
+    name: backup-volume
 
 networks:
   default:
