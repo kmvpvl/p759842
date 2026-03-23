@@ -14,12 +14,15 @@ DATE=$(date +"%Y-%m-%d_%H-%M-%S")
 
 echo "Starting backup for DF..."
 
-docker compose exec mysql-db /usr/bin/mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" DF | gzip > "./mysqlbckp/DF_$DATE.sql.gz"
+docker compose exec mysql-db /usr/bin/mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" df | gzip > "./mysqlbckp/df_$DATE.sql.gz"
 
-echo "Backup finished: ./mysqlbckp/DF_$DATE.sql.gz"
+echo "Backup finished: ./mysqlbckp/df_$DATE.sql.gz"
 
 echo "Starting backup for SHOME..."
 
-docker compose exec mysql-db /usr/bin/mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" SHOME | gzip > "./mysqlbckp/SHOME_$DATE.sql.gz"
+docker compose exec mysql-db /usr/bin/mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" shome | gzip > "./mysqlbckp/shome_$DATE.sql.gz"
 
-echo "Backup finished: ./mysqlbckp/SHOME_$DATE.sql.gz"
+echo "Backup finished: ./mysqlbckp/shome_$DATE.sql.gz"
+
+# Optional: Keep only last 30 days
+find "./mysqlbckp" -type f -name "*.sql.gz" -mtime +30 -delete
