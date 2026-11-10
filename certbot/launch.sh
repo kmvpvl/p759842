@@ -15,3 +15,5 @@ docker compose run --rm misis-certbot renew --cert-name cf.misis.space --webroot
 
 
 docker compose run --rm  misis-certbot certonly --webroot --webroot-path /var/www/certbot/ --cert-name sh.plutchart.com -d sh.plutchart.com --dry-run
+
+docker compose run --rm misis-certbot renew --cert-name dolceforte.rs --webroot-path /var/www/certbot/ --dry-run

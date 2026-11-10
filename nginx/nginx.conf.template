@@ -25,6 +25,7 @@ http {
                     mail.${DOLCEFORTE_DOMAIN}
                     bckp.${DOLCEFORTE_DOMAIN}
                     sh.${PLUTCHART_DOMAIN}
+                    komov.${DOLCEFORTE_DOMAIN}
                     ;
         server_tokens off;
 
@@ -37,6 +38,21 @@ http {
             return 301 https://$host$request_uri;
         }
     }    
+
+    # MISIS.SPACE landing
+    server {
+        server_name komov.${DOLCEFORTE_DOMAIN};
+        include dolceforte_ssl.conf;
+
+#        location = /health {
+#            default_type application/json;
+#            js_content health.health;
+#        }
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+    }
 
     server {
         server_name www.${DOLCEFORTE_DOMAIN} ${DOLCEFORTE_DOMAIN};
