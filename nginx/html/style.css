@@ -1,0 +1,407 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.main-title,
+.sub-title,
+.header-buttons {
+    margin: 0;
+}
+
+.title-row {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    top: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.main-title {
+    font-size: 140px;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: -1rem;
+    line-height: 0.8;
+    margin-top: 0;
+}
+
+.sub-title {
+    font-size: 48px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: -0.2rem;
+    margin-top: 18px;
+}
+
+
+.title-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7px;
+}
+
+
+.description {
+    font-size: 25px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: -0.1rem;
+    vertical-align: top;
+    line-height: 0.9;
+    margin-left: 2px;
+    
+}
+
+.header-buttons {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    letter-spacing: -0.1rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.header-buttons:hover {
+    opacity: 0.5;
+}
+
+
+.header-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: auto;
+    gap: 12px;
+    position: fixed;
+    top: 40px;
+    right: 0;
+    margin-right: 17px;
+}
+
+
+.projects-list {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    letter-spacing: -0.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    margin-right: 17px;
+}
+
+.project-list-item {
+    cursor: pointer;
+    text-align: right;
+    transition: opacity 0.2s ease;
+}
+
+.project-list-item:hover {
+    opacity: 0.5;
+}
+
+
+.project-description {
+    display: block;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    text-align: justify;
+    letter-spacing: -0.1rem;
+    font-size: 32px;
+    word-spacing: 0.1em;
+    overflow-wrap: anywhere;
+    font-family: 'Arial', sans-serif;
+    margin-left: 17px;
+    margin-bottom: 8px;
+    margin-right: 17px;
+    margin-top: 100px;
+    grid-column: 1;
+}
+
+.zmejeborec-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.zmejeborec-gallery .visitscan {
+    grid-column: 1 / -1;
+}
+
+.zmejeborec-gallery > .project-description + img {
+    grid-column: 1;
+}
+
+.video-zmejeborec {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.video-zmejeborec-check {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: black;
+}
+
+.zmejeborec-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+
+.zmejeborec-gallery img {
+    background-color: black;
+}
+
+.zmejeborec-gallery[hidden] {
+    display: none;
+}
+
+.starkon-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+
+.starkon-banner {
+    grid-column: 1 / -1;
+    background-color: black;
+}
+
+.starkon-visitcard {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    background-color: black;
+}
+
+.starkon-manifest {
+    object-fit: fill;
+    background-color: black;
+}
+
+.starkon-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.starkon-gallery[hidden] {
+    display: none;
+}
+
+
+.video-starkon {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+
+.monsoon-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.monsoon-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.monsoon-gallery .monsoon-cover {
+    grid-column: 1 / -1;
+}
+
+
+.monsoon-gallery[hidden] {
+    display: none;
+}
+
+.video-monsoon {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    background-color: black;
+}
+
+.sbc-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sbc-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.sbc-gallery .sbc-concert1 {
+    aspect-ratio: 543 / 405;
+    object-fit: fill;
+}
+
+
+.sbc-gallery[hidden] {
+    display: none;
+}
+
+
+.about-me-gallery[hidden] {
+    display: none;
+}
+
+.about-me-text {
+    hanging-punctuation: first;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    text-align: justify;
+    letter-spacing: -0.1rem;
+    word-spacing: 0.1em;
+    font-size: 32px;
+    overflow-wrap: anywhere;
+    font-family: 'Arial', sans-serif;
+    margin: 17px;
+    margin-right: 60%;
+    margin-top: 100px;
+    word-wrap: normal;
+}
+
+.about-me-image {
+    width: 40%;
+    height: auto;
+}
+
+.other-gallery[hidden] {
+    display: none;
+}
+
+.other-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.other-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    .zmejeborec-gallery {
+        margin-top: 0px;
+    }
+
+    .starkon-gallery {
+        margin-top: 0px;
+    }
+
+    .monsoon-gallery {
+        margin-top: 0px;
+    }
+
+    .sbc-gallery {
+        margin-top: 0px;
+    }
+
+    .main-title {
+        margin: 5px;
+        margin-left: 3px;
+        font-size: 70px;
+        letter-spacing: -0.5rem;
+    }
+
+    .sub-title {
+        font-size: 24px;
+        letter-spacing: -0.05rem;
+        margin-top: 0px;
+    }
+
+    .description {
+        font-size: 13px;
+        letter-spacing: -0.05rem;
+        margin-left: 0px;
+        text-wrap: nowrap;
+    }
+
+    .projects-list {
+        font-size: 18px;
+        letter-spacing: -0.05rem;
+        gap: 20px;
+    }
+
+    .project-description {
+        margin-top: 80px;
+        line-height: 1;
+        font-size: 20px;
+        margin-left: 17px;
+    }
+
+    .header-buttons {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .header-actions {
+        gap: 5px;
+        top: 25px;
+        flex-direction: column;
+    }
+
+    .about-me-text {
+        margin-top: 80px;
+        line-height: 1;
+        font-size: 20px;
+        margin-right: 180px;
+    }
+
+    .about-me-image {
+        width: 60%;
+        height: auto;
+}
+
+}
