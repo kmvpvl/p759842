@@ -8,7 +8,6 @@ const galleryMap = {
     "about-me-trig": "about-me-gallery",
     "hire-me-trig": "hire-me-gallery",
     "other-trig": "other-gallery",
-    "cp-trig": "cp-gallery"
 };
 
 const galleries = document.querySelectorAll("[id$='-gallery']");
