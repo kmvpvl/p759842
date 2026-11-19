@@ -104,7 +104,6 @@ html, body {
     margin-right: 17px;
 }
 
-
 .projects-list {
     font-size: 24px;
     font-family: 'Liberation Regular', sans-serif;
@@ -121,6 +120,42 @@ html, body {
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.projects-list-toggle {
+    display: none;
+}
+
+@media (min-width: 901px) and (hover: hover) {
+    .header-actions,
+    .projects-list {
+        isolation: isolate;
+    }
+
+    .header-actions::before,
+    .projects-list::before {
+        position: absolute;
+        z-index: -1;
+        border-radius: 4px;
+        background-color: white;
+        content: "";
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+    }
+
+    .header-actions::before {
+        inset: -8px;
+    }
+
+    .projects-list::before {
+        inset: -12px;
+    }
+
+    .header-actions:hover::before,
+    .projects-list:hover::before {
+        opacity: 1;
+    }
 }
 
 .project-list-item {
@@ -218,10 +253,6 @@ html, body {
     background-color: black;
 }
 
-.starkon-manifest {
-    object-fit: fill;
-    background-color: black;
-}
 
 .starkon-gallery img {
     display: block;
@@ -288,6 +319,14 @@ html, body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+
+.greenbank-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
 
 .sbc-gallery {
     margin-top: 40px;
@@ -365,13 +404,32 @@ html, body {
 
 
 .civ-pen-gallery {
-    grid-column: 1;
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    
 
 }
 
 .civ-pen-gallery img {
+    display: block; 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.time-gallery[hidden] {
+    display: none;
+}
+
+.time-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.time-gallery img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -379,13 +437,31 @@ html, body {
     background-color: black;
 }
 
+.time-scan-gallery {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
 
+.time-scan-final-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 
 
 @media (max-width: 900px) {
 
     .zmejeborec-gallery {
         margin-top: 0px;
+    }
+
+    .video-zmejeborec-check {
+        grid-column: -1 / 1;
+    }
+
+    .kid-zmejeborec{
+        grid-column: -1 / 1;
     }
 
     .starkon-gallery {
@@ -400,6 +476,17 @@ html, body {
         margin-top: 0px;
     }
 
+    .time-gallery {
+        margin-top: 0px;
+    }
+
+    .greenbank-gallery {
+        margin-top: 0px;
+    }
+
+    .greenbank-gallery img {
+        grid-column: -1 / 1;
+    }
     .main-title {
         margin: 5px;
         margin-top: 10px;
@@ -428,6 +515,41 @@ html, body {
         top: 50vh;
         top: 50lvh;
         gap: 20px;
+        padding: 4px 6px;
+        border-radius: 4px;
+        background-color: white;
+        transition: transform 0.3s ease;
+        margin-right: 13px;
+    }
+
+    .projects-list:hover {
+        background-color: white;
+        box-shadow: none;
+    }
+
+    .projects-list.is-collapsed {
+        transform: translate(130%, -50%);
+    }
+
+    .projects-list-toggle {
+        display: none;
+        position: fixed;
+        top: 50vh;
+        top: 50lvh;
+        right: 17px;
+        width: 33px;
+        height: 33px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255);
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .projects-list-toggle.is-visible {
+        display: block;
     }
 
     .project-description {
@@ -446,7 +568,16 @@ html, body {
         top: 50svh;    
         gap: 5px;
         top: 25px;
+        margin-right: 13px;
         flex-direction: column;
+        padding: 4px 6px;
+        border-radius: 4px;
+        background-color: white;
+    }
+
+    .header-actions:hover {
+        background-color: white;
+        box-shadow: none;
     }
 
     .about-me-text {

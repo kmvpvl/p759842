@@ -8,6 +8,7 @@ const galleryMap = {
     "about-me-trig": "about-me-gallery",
     "hire-me-trig": "hire-me-gallery",
     "other-trig": "other-gallery",
+    "time-trig": "time-gallery",
 };
 
 const galleries = document.querySelectorAll("[id$='-gallery']");
@@ -66,3 +67,45 @@ function loadVisibleVideos() {
 
 window.addEventListener("scroll", loadVisibleVideos, { passive: true });
 window.addEventListener("resize", loadVisibleVideos);
+
+const projectsList = document.querySelector(".projects-list");
+const projectsListToggle = document.querySelector(".projects-list-toggle");
+
+if (projectsList && projectsListToggle) {
+    const mobileMenuQuery = window.matchMedia("(max-width: 900px)");
+    let menuExpanded = false;
+    let previousScrollY = window.scrollY;
+
+    function updateProjectsMenu() {
+        const isCollapsed = mobileMenuQuery.matches && window.scrollY > 0 && !menuExpanded;
+        projectsList.classList.toggle("is-collapsed", isCollapsed);
+        projectsListToggle.classList.toggle("is-visible", isCollapsed);
+        projectsListToggle.setAttribute("aria-expanded", String(!isCollapsed));
+        previousScrollY = window.scrollY;
+    }
+
+    window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (!mobileMenuQuery.matches || currentScrollY === 0 || currentScrollY > previousScrollY) {
+            menuExpanded = false;
+        }
+
+        previousScrollY = currentScrollY;
+        updateProjectsMenu();
+    }, { passive: true });
+
+    projectsListToggle.addEventListener("click", () => {
+        menuExpanded = true;
+        updateProjectsMenu();
+    });
+
+    window.addEventListener("resize", () => {
+        if (!mobileMenuQuery.matches) {
+            menuExpanded = false;
+        }
+        updateProjectsMenu();
+    });
+
+    updateProjectsMenu();
+}
