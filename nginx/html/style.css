@@ -411,23 +411,6 @@ html {
     grid-column: 1;
 }
 
-
-.civ-pen-gallery {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    
-
-}
-
-.civ-pen-gallery img {
-    display: block; 
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    background-color: black;
-}
-
 .time-gallery[hidden] {
     display: none;
 }
@@ -456,6 +439,25 @@ html {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+.civ-pen-gallery[hidden] {
+    display: none;
+}
+
+.civ-pen-gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.civ-pen-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
 }
 
 
@@ -497,13 +499,17 @@ html {
         margin-top: 0px;
     }
 
-
     .other-gallery {
         margin-top: 0px;
     }
     .greenbank-gallery img {
         grid-column: -1 / 1;
     }
+
+    .civ-pen-gallery {
+        margin-top: 0px;
+    }
+
     .main-title {
         margin: 5px;
         margin-top: 10px;

@@ -5,6 +5,7 @@ const galleryMap = {
     "monsoon-trig": "monsoon-gallery",
     "sbc-trig": "sbc-gallery",
     "time-trig": "time-gallery",
+    "civ-pen-trig": "civ-pen-gallery",
     "about-me-trig": "about-me-gallery",
     "hire-me-trig": "hire-me-gallery",
     "other-trig": "other-gallery",
