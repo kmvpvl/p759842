@@ -30,6 +30,10 @@ triggers.forEach((trigger) => {
     if (!targetGallery) return;
 
     trigger.addEventListener("click", () => {
+        if (trigger.classList.contains("project-list-item")) {
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
         const isVisible = !targetGallery.hidden;
         hideAllGalleries();
 
