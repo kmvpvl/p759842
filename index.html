@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="only light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>bpk359</title>
+</head>
+
+
+
+<body>
+
+    <div class="title-row">
+        <div class="main-title">bpk359</div>
+        <div class="title-info">
+            <div class="sub-title">Stepan Komov</div>
+            <div class="description">multidisciplinary designer</div>
+        </div>
+        <div class="header-actions">
+            <div class="header-buttons" id="about-me-trig">about me</div>
+            <div class="header-buttons" id="hire-me-trig">hire me</div>
+        </div>
+    </div>
+
+    <div class="projects-list" id="projects-list">
+        <div class="project-list-item" id="zmejeborec-trig">zmejeborec</div>
+        <div class="project-list-item" id="starkon-trig">starkon</div>
+        <div class="project-list-item" id="monsoon-trig">monsoon col</div>
+        <div class="project-list-item" id="sbc-trig">sbc identity</div>
+        <div class="project-list-item" id="time-trig">time in space</div>
+        <div class="project-list-item" id="civ-pen-trig">cp brandbook</div>
+        <div class="project-list-item" id="greenbank-trig">greenbank</div>
+        <div class="project-list-item" id="other-trig">other works</div>
+    </div>
+    <button class="projects-list-toggle" type="button" aria-controls="projects-list" aria-expanded="true" aria-label="Вернуть меню проектов">
+        <img class="projects-list-toggle-icon" src="arrow.svg" alt="" aria-hidden="true" width="18" height="18">
+    </button>
+
+
+    <div id="about-me-gallery" class="about-me-gallery" hidden>
+        <div class="about-me-text">
+            <p>I'm a multidisciplinary designer working at the branding, graphic design, communications, photography, web design, motion design and much more.</p>
+            <img class="about-me-image" src="me.webp" alt="me" loading="lazy" width="640" height="640">
+        </div>
+    </div>
+
+    <div id="hire-me-gallery" class="hire-me-gallery" hidden>
+        <div class="about-me-text">
+            <p>I'm currently available for freelance work, full-time positions or internships.</p>
+            <p><a href="mailto:step.kom359@gmail.com">step.kom359@gmail.com</a></p>
+        </div>
+    </div>
+
+
+    <div id="zmejeborec-gallery" class="zmejeborec-gallery" hidden>
+        <div class="project-description">zmejeborec is the design school community, made to connect openminded individuals and let them share their skills and knowledge between each other.</div>
+        <img src="zmejeborec/poster2.webp" alt="zmejeborec poster 2" loading="lazy" width="2480" height="3508">
+        <img src="zmejeborec/poster1.webp" alt="zmejeborec poster 1" loading="lazy" width="2480" height="3508">
+        <img class="visitscan" src="zmejeborec/visitscan.webp" alt="zmejeborec visit scan" loading="lazy" width="2560" height="1808">
+        <img src="zmejeborec/poster3.webp" alt="zmejeborec poster 3" loading="lazy" width="2480" height="3508">
+        <img src="zmejeborec/poster4.webp" alt="zmejeborec poster 4" loading="lazy" width="2480" height="3508">
+        <video class="video-zmejeborec-check" autoplay muted loop playsinline loading="lazy" preload="none" width="1920" height="1080">
+            <source data-src="zmejeborec/check.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <img class="kid-zmejeborec" src="zmejeborec/kid.webp" alt="kids" loading="lazy" width="3018" height="1773">
+        <video class="video-zmejeborec" autoplay muted loop playsinline loading="lazy" preload="none" width="1920" height="1088">
+            <source data-src="zmejeborec/preza.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="starkon-gallery" class="starkon-gallery" hidden>
+        <div class="project-description">STARKON is a fictional racing forum, where F1 teams and associatives can discuss industry topics with audiences.</div>
+        <img class="starkon-banner" src="sk/banner.webp" alt="starkon banner" loading="lazy" width="1907" height="756">
+        <img src="sk/helmet.webp" alt="starkon helmet" loading="lazy" width="4500" height="3000">
+        <img src="sk/envelope.webp" alt="starkon envelope" loading="lazy" width="3000" height="2000">
+        <video class="video-starkon" autoplay muted loop playsinline loading="lazy" preload="none" width="2000" height="2000">
+            <source data-src="sk/starkon-vid.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <img class="kid-zmejeborec" src="sk/visitsk.webp" alt="starkon visit" loading="lazy" width="4000" height="2667">
+        <img class="kid-zmejeborec" src="sk/manifest.webp" alt="starkon manifest" loading="lazy" width="3000" height="2000">
+        <img class="starkon-visitcard" src="sk/presscard.webp" alt="starkon presscard" loading="lazy" width="4000" height="3000">
+    </div>
+
+
+    <div id="greenbank-gallery" class="greenbank-gallery" hidden>
+        <div class="project-description">Green Bank is a fictional bank that focuses on sustainable finance and environmental responsibility.</div>
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1918" height="906">
+            <source data-src="gb/gbvideo.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <img src="gb/cardfront.webp" loading="lazy" width="3000" height="2250">
+        <img src="gb/cardback.webp" loading="lazy" width="3000" height="2250">
+    </div>
+
+    
+    <div id="monsoon-gallery" class="monsoon-gallery" hidden>
+        <div class="project-description">monsoon is a collection of badges exploring the aesthetics of internet culture and nonformal, geek fashion in 2010s.</div>
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1600" height="1200">
+            <source data-src="monsoon/video/compressed/badgesvideo.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <img class="monsoon-cover" src="monsoon/cover.webp" alt="monsoon cover" loading="lazy" width="2480" height="3508">
+        <img src="monsoon/photo/ena.webp" alt="monsoon ena" loading="lazy" width="2760" height="4912">
+        <img src="monsoon/photo/stefan1.webp" alt="monsoon stefan1" loading="lazy" width="2760" height="4912">
+        <img class="video-monsoon" src="monsoon/photo/stefan2.webp" alt="monsoon stefan2" loading="lazy" width="5472" height="3648">
+        <img src="monsoon/photo/stefan3.webp" alt="monsoon stefan3" loading="lazy" width="5472" height="3648">
+        <img src="monsoon/photo/stefan4.webp" alt="monsoon stefan4" loading="lazy" width="5472" height="3648">
+
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="4210" height="3000">
+            <source data-src="monsoon/video/compressed/badges1.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="4210" height="3000">
+            <source data-src="monsoon/video/compressed/badges2.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="4210" height="3000">
+            <source data-src="monsoon/video/compressed/badges3.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1000" height="770">
+            <source data-src="monsoon/video/compressed/bannerpeople.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+
+    <div id="civ-pen-gallery" class="civ-pen-gallery" hidden>
+        <div class="project-description">Brandbook for the Civil Penalty. Civil Penalty is the fictional brand for a capsule clothing which is being designed in the extravagant collaborations.</div>
+
+        <img class="video-monsoon" src="other/civ-pen/civpen1.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen2.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen3.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen4.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen5.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen6.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen7.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen8.webp" loading="lazy" width="1240" height="1754">  
+        <img src="other/civ-pen/civpen9.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen10.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen11.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen12.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen13.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen14.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen15.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen16.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen17.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen18.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen19.webp" loading="lazy" width="1240" height="1754">
+        <img src="other/civ-pen/civpen20.webp" loading="lazy" width="1240" height="1754"> 
+        <img src="other/civ-pen/civpen21.webp" loading="lazy" width="1240" height="1754">                    
+    </div>
+
+    <div id="sbc-gallery" class="sbc-gallery" hidden>
+        <div class="project-description">sbc (swagyboysclub) is a shoegaze band based in Moscow, Russia. Idea of their aesthetic lies in dreamy and at the same time melancholic atmosphere.</div>
+
+        <img class="video-monsoon" src="sbc/concert3.webp" alt="sbc concert 3" loading="lazy" width="1280" height="853">
+
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1920" height="1080">
+            <source data-src="sbc/sbc.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <img class="sbc-concert1" src="sbc/concert1.webp" alt="sbc concert 1" loading="lazy" width="1280" height="853">
+        <img src="sbc/concert2.webp" alt="sbc concert 2" loading="lazy" width="543" height="405">
+
+        <img src="sbc/posterpm.webp" alt="sbc poster 1" loading="lazy" width="2480" height="3508">
+        <img src="sbc/sofagig.webp" alt="sbc poster 2" loading="lazy" width="2480" height="3508">
+        <img class="kid-zmejeborec" src="sbc/nugaze.webp" alt="sbc nugaze" loading="lazy" width="3000" height="3000">
+        <img class="kid-zmejeborec" src="sbc/dayssbc.webp" alt="sbc days" loading="lazy" width="3000" height="3000">
+    </div>
+
+    <div id="other-gallery" class="other-gallery" hidden>
+
+        <div class="project-description">Posters for the tournament "Plakat Tournament".</div>
+
+        <img src="other/turnir/turnir2.webp" alt="other work 2" loading="lazy" width="2480" height="3508">        
+        <img src="other/turnir/turnir1.webp" alt="other work 1" loading="lazy" width="2480" height="3508">
+
+
+        <div class="project-description">Advertisement for the merchandise store "MASHDEAD".</div>
+        <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1920" height="1080">
+            <source data-src="other/mash.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="project-description">Series of posters "nothing".</div>
+        <img src="other/nt/iam-nt.webp" alt="other work 3" loading="lazy" width="3508" height="4961">
+        <img src="other/nt/nt-gain.webp" alt="other work 4" loading="lazy" width="3508" height="4961">
+        <img src="other/nt/nt-hide.webp" alt="other work 5" loading="lazy" width="3508" height="4961">
+
+        <div class="project-description">Poster for the shoegaze band "shampur".</div>
+        <img src="other/shampur.webp" alt="other work 6" loading="lazy" width="2480" height="3508">
+
+        <div class="project-description">Poster for the design community "Crepature".</div>
+        <img src="other/krepa.webp" alt="other work 7" loading="lazy" width="2480" height="3508">
+
+        <div class="project-description">Class for the electronic music concert "Amenime 6".</div>
+        <img src="other/amenime.webp" alt="other work 8" loading="lazy" width="2480" height="3508">
+
+        <div class="project-description">Compilation of posters that i like but can't say much about them.</div>
+        <img src="other/wasteland.webp" loading="lazy" width="2480" height="3508">
+        <img src="other/solar.webp" loading="lazy" width="2480" height="3508">
+        <img src="other/doodles.webp" loading="lazy" width="2480" height="3508">
+        <img src="other/winter.webp" loading="lazy" width="2480" height="3508">
+
+    </div>
+
+
+    <div id="time-gallery" class="time-gallery" hidden>
+        <div class="project-description">This work is dedicated to the exhibition in Faculcy of Contemporary Arts in Belgrade. The main theme of the poster is how our time and plans getting erased by the deadlines.</div>
+        </video>
+        <img class="video-monsoon" src="time/timework.webp" loading="lazy" width="2480" height="3508">
+        <div class="time-scan-gallery">
+            <img src="time/scans/scan (1).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (2).webp" loading="lazy" width="638" height="877">           
+            <img src="time/scans/scan (3).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (4).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (5).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (6).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (7).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (8).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (9).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (10).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (11).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (12).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (13).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (15).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (16).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (17).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (18).webp" loading="lazy" width="638" height="877">
+            <img src="time/scans/scan (19).webp" loading="lazy" width="638" height="877">
+            <div class="time-scan-final-grid">
+                <img src="time/scans/scan (20).webp" loading="lazy" width="638" height="877">
+                <img src="time/scans/scan (21).webp" loading="lazy" width="638" height="877">
+                <img src="time/scans/scan (22).webp" loading="lazy" width="638" height="877">
+                <img src="time/scans/scan (23).webp" loading="lazy" width="638" height="877">
+            </div>
+        </div>    
+            <img src="time/photos/timephoto (6).webp" loading="lazy" width="4000" height="3000">
+            <img src="time/photos/timephoto (1).webp" loading="lazy" width="4000" height="3000">
+            
+            <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1920" height="1080">
+                <source data-src="time/video/installtime.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+
+            <img src="time/photos/timephoto (2).webp" loading="lazy" width="4000" height="3000">
+            <img src="time/photos/timephoto (3).webp" loading="lazy" width="4000" 
+            height="3000">
+
+            <video class="video-monsoon" autoplay muted loop playsinline loading="lazy" preload="none" width="1920" height="1080">
+                <source data-src="time/video/firetime.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+
+            <img class="kid-zmejeborec" src="time/photos/timephoto (4).webp" loading="lazy" width="4000" height="3000">
+            <img class="kid-zmejeborec" src="time/photos/timephoto (7).webp" loading="lazy" width="4000" height="3000">
+    </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
