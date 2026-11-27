@@ -71,8 +71,15 @@ http {
         server_name api.${DOLCEFORTE_DOMAIN};
         include dolceforte_ssl.conf;
 
-        # Разрешаем загрузку файлов до 50 МБ
+        # Разрешаем загрузку файлов до 5 МБ
         client_max_body_size 5M;
+
+        location /uploads/ {
+            alias /var/lib/df/uploads/;
+            expires 30d;
+            add_header Cache-Control "public, no-transform";
+            access_log off;
+        }
 
         location / {
             proxy_set_header Host $host;
