@@ -71,6 +71,9 @@ http {
         server_name api.${DOLCEFORTE_DOMAIN};
         include dolceforte_ssl.conf;
 
+        # Разрешаем загрузку файлов до 50 МБ
+        client_max_body_size 5M;
+
         location / {
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
